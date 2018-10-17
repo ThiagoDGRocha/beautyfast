@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Login com PrimeFaces</title>
+</h:head>
+<h:body>
+
+	<p:contentFlow value="#{homeMB.images}" var="image">
+		<p:graphicImage name="imagens/galeria/#{image}"
+			styleClass="content" />
+		<div class="caption">#{image}</div>
+	</p:contentFlow>
+
+	<p:galleria value="#{homeMB.images}" var="image" panelWidth="600"
+		panelHeight="303" showCaption="true">
+		<p:graphicImage name="imagens/galeria/#{image}"
+			alt="Image Description for #{image}" title="#{image}" />
+	</p:galleria>
+</h:body>
+</html>
