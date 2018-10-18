@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Home BeautyFast</title>
+</h:head>
+<h:body>
+	<h1>Seja bem vindo ao BeautyFast</h1>
+	<h:form>
+		<p:messages id="messages" showDetail="true" closable="true"/>
+		<h:panelGrid columns="2" cellpadding="5">
+			<h:outputText value="Usuário" />
+			<p:inputText id="usuario" value="#{login.email}" required="true"/>
+
+			<h:outputText value="Senha" />
+			<p:password id="senha" value="#{login.psw}" required="true"/>	
+
+			<h:commandButton value="Entrar" action="#{login.autentica}" update="messages"/>
+		</h:panelGrid>
+	</h:form>
+	<h:link value="Cadastrar" outcome="cadastroCliente" />
+</h:body>
+</html>

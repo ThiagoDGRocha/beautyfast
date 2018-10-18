@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Home BeautyFast</title>
+</h:head>
+<h:body>
+	<h:form>
+		<div align="center">
+			<h:outputLink value="javascript:void(0)" onclick="PF('dlg').show();"
+				title="login">
+				<p:graphicImage name="imagens/login2.png" />
+			</h:outputLink>
+		</div>
+		<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+		<p:dialog header="Login" widgetVar="dlg" resizable="false">
+			<h:panelGrid columns="2" cellpadding="5">
+				<h:outputLabel for="email" value="Usuáio:" />
+				<p:inputText id="email" value="#{login.email}"
+					required="true" label="email" />
+
+				<h:outputLabel for="psw" value="Senha:" />
+				<p:password id="psw" value="#{login.psw}"
+					required="true" label="psw" />
+
+				<f:facet name="footer">
+					<p:commandButton value="Entrar" update="growl"
+						actionListener="#{login.autentica}"
+						oncomplete="handleLoginRequest(xhr, status, args)" />
+				</f:facet>
+			</h:panelGrid>
+		</p:dialog>
+	</h:form>
+
+	<script type="text/javascript">
+		function handleLoginRequest(xhr, status, args) {
+			if (args.validationFailed || !args.loggedIn) {
+				PF('dlg').jq.effect("shake", {
+					times : 5
+				}, 100);
+			} else {
+				PF('dlg').hide();
+				$('#loginLink').fadeOut();
+			}
+		}
+	</script>
+
+</h:body>
+</html>

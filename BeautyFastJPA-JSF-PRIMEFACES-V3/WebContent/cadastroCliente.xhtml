@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Cadastro Clinte</title>
+</h:head>
+<h:body>
+	<h1>Cadastro de Clientes</h1>
+	<h:form>
+		<p:messages id="messages" />
+		<h:panelGrid columns="2">
+
+			<h:outputText value="Identificação" />
+			<p:inputNumber id="idCliente" readonly="true" />
+
+			<h:outputText value="Nome completo" />
+			<p:inputText id="clientNome" value="#{cadastroCliente.name}" required="true" />
+
+			<h:outputText value="CPF" />
+			<p:inputText id="clientCPF" value="#{cadastroCliente.cpf}" required="true" />
+
+			<h:outputText value="Idade" />
+			<p:inputText id="clientIdade" value="#{cadastroCliente.age}" required="true" />
+
+			<h:outputText value="Rua" />
+			<p:inputText id="clientRua" value="#{cadastroCliente.street}" required="true" />
+
+			<h:outputText value="Complemento" />
+			<p:inputText id="clientComplemento" value="#{cadastroCliente.complement}" required="true" />
+
+			<h:outputText value="Cidade" />
+			<p:inputText id="clientCidade" value="#{cadastroCliente.city}" required="true" />
+
+			<h:outputText value="Estado" />
+			<p:inputText id="clientEstado" value="#{cadastroCliente.state}" required="true" />
+
+			<h:outputText value="CEP" />
+			<p:inputText id="clientCEP" value="#{cadastroCliente.cep}" required="true" />
+
+			<h:outputText value="Número telefone" />
+			<p:inputText id="clientNumero" value="#{cadastroCliente.numeroContato}" required="true" />
+
+			<h:outputText value="E-mail" />
+			<p:inputText id="clientEmail" value="#{cadastroCliente.emailContato}" required="true" />
+
+			<h:outputText value="Senha" />
+			<p:password id="clientSenha" value="#{cadastroCliente.psw}" required="true" />
+
+			<h:outputText value="Comfirme a senha" />
+			<p:password id="clientConfirmSenha" value="#{cadastroCliente.pswConfirm}" required="true" />
+
+		</h:panelGrid>
+		<h:commandButton id="clientCadastro" value="Cadastrar"
+			action="#{cadastroCliente.cadastraCliente}" update="messages" />
+	</h:form>
+</h:body>
+</html>
