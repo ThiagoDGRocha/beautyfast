@@ -1,0 +1,189 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<title>Editar profissional</title>
+	<style type="text/css">
+.btnWidth {
+	width: 80px;
+}
+
+.col-sm-updated {
+	padding-top: 7px;
+}
+
+.col-sm-updated a {
+	margin-left: 30px;
+	text-decoration: none !important;
+}
+
+.col-sm-27 {
+	width: 27% !important;
+}
+</style>
+</h:head>
+<h:body>
+	<center>
+		<h2>
+			<h:outputText value="Ediçao de profissional" />
+		</h2>
+	</center>
+	<h:form id="profissionalForm" styleClass="form-horizontal">
+		<div class="form-group">
+			<h:outputLabel styleClass="control-label col-sm-4">Identificação:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:outputText value="#{profissionalMB.prof.profId}"
+					styleClass="text text-success" />
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="nomeProfissional"
+				styleClass="control-label col-sm-4">Nome completo:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="nomeProfissional"
+					value="#{profissionalMB.prof.profName}" styleClass="form-control"
+					required="true"
+					requiredMessage="O nome da profissional deve ser preenchido." />
+				<p:message for="nomeProfissional" />
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="cpfProfissional"
+				styleClass="control-label col-sm-4">CPF:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="cpfProfissional"
+					value="#{profissionalMB.prof.profCPF}" styleClass="form-control"
+					required="true" requiredMessage="O CPF deve ser preenchido." />
+				<p:message for="cpfProfissional" />
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="idadeProfissional"
+				styleClass="control-label col-sm-4">Idade:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="idadeProfissional"
+					value="#{profissionalMB.prof.profAge}" styleClass="form-control"
+					required="true" requiredMessage="A idade deve ser preenchida." />
+				<p:message for="idadeProfissional" />
+			</div>
+		</div>
+		<p:separator />
+		<div class="form-group">
+			<h:outputLabel for="ruaProfissional"
+				styleClass="control-label col-sm-4">Rua:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="ruaProfissional"
+					value="#{profissionalMB.prof.profAdress.adrStreet}"
+					styleClass="form-control" required="true"
+					requiredMessage="A rua deve ser preenchida." />
+				<p:message for="ruaProfissional" />
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="complementoProfissional"
+				styleClass="control-label col-sm-4">Complemento:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="complementoProfissional"
+					value="#{profissionalMB.prof.profAdress.adrComplement}"
+					styleClass="form-control" required="true"
+					requiredMessage="O complemento deve ser preenchida." />
+				<p:message for="complementoProfissional" />
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="cidadeProfissional"
+				styleClass="control-label col-sm-4">Cidade:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="cidadeProfissional"
+					value="#{profissionalMB.prof.profAdress.adrCity}"
+					styleClass="form-control" required="true"
+					requiredMessage="A cidade deve ser preenchida." />
+				<p:message for="cidadeProfissional" />
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="estadoProfissional"
+				styleClass="control-label col-sm-4">Estado:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="estadoProfissional"
+					value="#{profissionalMB.prof.profAdress.adrState}"
+					styleClass="form-control" required="true"
+					requiredMessage="O estado deve ser preenchido." />
+				<p:message for="estadoProfissional" />
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="cepProfissional"
+				styleClass="control-label col-sm-4">CEP:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="cepProfissional"
+					value="#{profissionalMB.prof.profAdress.adrStreet}"
+					styleClass="form-control" required="true"
+					requiredMessage="O CEP deve ser preenchido." />
+				<p:message for="cepProfissional" />
+			</div>
+		</div>
+		<p:separator />
+		<div class="form-group">
+			<h:outputLabel for="numeroProfissional"
+				styleClass="control-label col-sm-4">Número de telefone:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="numeroProfissional"
+					value="#{profissionalMB.prof.profContact.contNumber}"
+					styleClass="form-control" required="true"
+					requiredMessage="O CEP deve ser preenchido." />
+				<p:message for="numeroProfissional" />
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="emailProfissional"
+				styleClass="control-label col-sm-4">Email para contato e acesso ao sistema:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="emailProfissional"
+					value="#{profissionalMB.prof.profUser.userName}"
+					styleClass="form-control" required="true"
+					requiredMessage="O email deve ser preenchido." />
+				<p:message for="emailProfissional" />
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="senhaProfissional"
+				styleClass="control-label col-sm-4">Senha:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputSecret id="senhaProfissional"
+					value="#{profissionalMB.prof.profUser.userPassword}"
+					styleClass="form-control" required="true"
+					requiredMessage="A senha deve ser preenchida." />
+				<p:message for="senhaProfissional" />
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="confirmSenhaProfissional"
+				styleClass="control-label col-sm-4">Confirme a senha:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputSecret id="confirmSenhaProfissional"
+					value="#{profissionalMB.confirmSenha}"
+					styleClass="form-control" required="true"
+					requiredMessage="A confirmação da senha deve ser preenchida." />
+				<p:message for="confirmSenhaProfissional" />
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-2 col-sm-27" />
+			<div class="col-sm-4">
+				<div class="col-sm-2">
+					<h:commandButton value="Salvar" action="#{profissionalMB.save}"
+						styleClass="btn btn-success btnWidth" />
+				</div>
+				<div class="col-sm-1" />
+				<div class="col-sm-updated">
+					<h:outputLink value="listaprofissionais.xhtml">Ver lista de profissionais</h:outputLink>
+				</div>
+			</div>
+		</div>
+	</h:form>
+	
+</h:body>
+</html>

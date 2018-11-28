@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Home Administrador</title>
+</h:head>
+<h:body>
+	<h1>Menu Administrador</h1>
+	<h:form>
+		<p:growl id="messages" sticky="true" showDetail="true" life="50" >
+		<p:autoUpdate/>
+		</p:growl>
+		<p:slideMenu style="width:500px">
+			<p:submenu label="Administrador itens" icon="ui-icon-refresh">
+				<p:menuitem value="Atualizar perfil" outcome="/restrict/administrador/principaladmin"
+					icon="ui-icon-arrowrefresh-1-w" />
+
+				<p:menuitem value="Cadastrar novo administrador"
+					outcome="/restrict/administrador/principaladmin" icon="ui-icon-disk" />
+
+				<p:menuitem value="Listar administradores" outcome="/restrict/administrador/principaladmin"
+					icon="ui-icon-list" />
+			</p:submenu>
+
+			<p:submenu label="Profissionais itens" icon="ui-icon-newwin">
+
+				<p:menuitem value="Cadastrar novo profissional"
+					outcome="/restrict/administrador/principaladmin" icon="ui-icon-close" />
+
+				<p:menuitem value="Listar profissionais" outcome="/restrict/administrador/principaladmin"
+					icon="ui-icon-close" />
+			</p:submenu>
+
+			<p:submenu label="Especialidade itens" icon="ui-icon-newwin">
+				<p:menuitem value="Cadastrar nova especialidade"
+					outcome="/restrict/especialidade/novaespecialidade.xhtml"
+					icon="ui-icon-close" />
+
+				<p:menuitem value="Listar especialidades"
+					outcome="/restrict/especialidade/listaespecialidades.xhtml"
+					icon="ui-icon-close" />
+			</p:submenu>
+
+			<p:submenu label="Cliente itens" icon="ui-icon-newwin">
+				<p:menuitem value="Listar clientes" outcome="/restrict/administrador/principaladmin"
+					icon="ui-icon-close" />
+			</p:submenu>
+
+			<p:submenu label="Agenda itens" icon="ui-icon-newwin">
+				<p:menuitem value="Listar agendas" outcome="/restrict/administrador/principaladmin"
+					icon="ui-icon-close" />
+			</p:submenu>
+
+		</p:slideMenu>
+	</h:form>
+</h:body>
+</html>

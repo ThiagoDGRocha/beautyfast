@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Lista de especialidades</title>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<style type="text/css">
+.tableUpdated {
+	width: 90% !important;
+	margin: 17px 58px 0 !important;
+}
+
+.btnSpace {
+	margin: 17px;
+}
+</style>
+</h:head>
+<h:body>
+	<p:growl id="growl" showDetail="true" life="10000" autoUpdate="true" />
+	<center>
+		<h2>
+			<h:outputText value="Lista de especialidades cadastrados!" />
+		</h2>
+	</center>
+	<h:form id="especialidadeForm">
+
+		<h:dataTable id="especialidadeTable"
+			value="#{especialidadeMB.listAll}" var="especialidade"
+			styleClass="table table-striped table-bordered tableUpdated">
+			<h:column>
+				<f:facet name="header">Identificação</f:facet>
+				<h:outputText value="#{especialidade.specialtyId}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				<h:outputText value="#{especialidade.specialtyName}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Descrição</f:facet>
+				<h:outputText value="#{especialidade.specialtyDescription}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Duração</f:facet>
+				<h:outputText value="#{especialidade.specialtyDuration}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Preço</f:facet>
+				<h:outputText value="#{especialidade.specialtyPrice}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Atualizar</f:facet>
+				<h:commandButton
+					action="#{especialidadeMB.goToEditaEspecialidade(especialidade)}"
+					value="Atualizar" styleClass="btn btn-primary">
+				</h:commandButton>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Excluir</f:facet>
+				<h:commandButton action="#{especialidadeMB.delete(especialidade)}"
+					value="Excluir" styleClass="btn btn-danger">
+				</h:commandButton>
+			</h:column>
+		</h:dataTable>
+		<center>
+			<h:commandButton
+				action="/restrict/especialidade/novaespecialidade.xhtml?faces-redirect=true"
+				value="Adicionar nova especialidade"
+				styleClass="btn btn-success btnSpace" />
+		</center>
+			<h:commandLink value="Menu principal"
+				action="/restrict/administrador/principaladmin.xhtml" />
+	</h:form>
+</h:body>
+</html>

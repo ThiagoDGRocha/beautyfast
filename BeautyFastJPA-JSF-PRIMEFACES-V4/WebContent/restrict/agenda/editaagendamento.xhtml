@@ -1,0 +1,99 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<title>Editar especialidade</title>
+	<style type="text/css">
+.btnWidth {
+	width: 80px;
+}
+
+.col-sm-updated {
+	padding-top: 7px;
+}
+
+.col-sm-updated a {
+	margin-left: 30px;
+	text-decoration: none !important;
+}
+
+.col-sm-27 {
+	width: 27% !important;
+}
+</style>
+</h:head>
+<h:body>
+	<p:growl id="growl" sticky="true" showDetail="true" life="50" />
+	<center>
+		<h2>
+			<h:outputText value="Edição de especialidade" />
+		</h2>
+	</center>
+	<h:form id="especialidadeForm" styleClass="form-horizontal">
+		<div class="form-group">
+			<h:outputLabel styleClass="control-label col-sm-4">Identificação:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:outputText value="#{especialidadeMB.specialty.specialtyId}"
+					styleClass="text text-success" />
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="nomeEspecialidade"
+				styleClass="control-label col-sm-4">Nome:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="nomeEspecialidade"
+					value="#{especialidadeMB.specialty.specialtyName}"
+					styleClass="form-control" required="true"
+					requiredMessage="O Nome da especialidade não pode estar vazio" />
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="descricaoEspecialidade"
+				styleClass="control-label col-sm-4">Descrição:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputTextarea id="descricaoEspecialidade"
+					value="#{especialidadeMB.specialty.specialtyDescription}"
+					styleClass="form-control" required="true"
+					requiredMessage="A descrição não pode estar vazia" />
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="duracaoEspecialidade"
+				styleClass="control-label col-sm-4">Duração em minutos:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="duracaoEspecialidade"
+					value="#{especialidadeMB.specialty.specialtyDuration}"
+					styleClass="form-control" required="true"
+					requiredMessage="A duração não pode estar vazia" />
+			</div>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="precoEspecialidade"
+				styleClass="control-label col-sm-4">Preço:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="precoEspecialidade"
+					value="#{especialidadeMB.specialty.specialtyPrice}"
+					styleClass="form-control" required="true"
+					requiredMessage="O preço não pode estar vazio" />
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-2 col-sm-27" />
+			<div class="col-sm-4">
+				<div class="col-sm-2">
+					<h:commandButton value="Atualizar"
+						action="#{especialidadeMB.update}"
+						styleClass="btn btn-success btnWidth" />
+				</div>
+				<div class="col-sm-1" />
+				<div class="col-sm-updated">
+					<h:outputLink
+						value="listaespecialidades.xhtml">Ver lista de especialidades</h:outputLink>
+				</div>
+			</div>
+		</div>
+	</h:form>
+</h:body>
+</html>
